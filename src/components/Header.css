@@ -1,0 +1,52 @@
+/* src/components/Header.css */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    z-index: 1000;
+  }
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .nav-links a:hover {
+    color: #000;
+  }
+  
+  /* Optional: shrink padding on small screens */
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .nav-links a {
+      margin-left: 1rem;
+    }
+  }
+  

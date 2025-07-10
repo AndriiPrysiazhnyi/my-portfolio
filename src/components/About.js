@@ -1,12 +1,15 @@
-import React from 'react';
-// import profilePic from '../assets/profile.jpg';
+import React from "react";
+import profilePic from "../assets/profile.jpg";
 
-export default function About() {
+export default function Hero() {
   return (
-    <section id="about">
-      {/* <img src={profilePic} alt="Andrii Prysiazhnyi" /> */}
-      <h1>Andrii Prysiazhnyi</h1>
-      <p>Front‑End Developer (HTML, CSS, SASS, JS, React) based in Kyiv. Currently crafting web apps at Nisum.</p>
+    <section id="hero" className="hero">
+      <img src={profilePic} alt="Andrii Prysiazhnyi" className="hero-img" />
+      <h1 className="hero-name">Andrii Prysiazhnyi</h1>
+      <p className="hero-title">Front-End Developer | React Specialist</p>
+      <p className="hero-desc">
+       SDET based in Bensalem. Building Website for myself.
+      </p>
     </section>
   );
 }
