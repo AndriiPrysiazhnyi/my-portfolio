@@ -48,7 +48,7 @@
     padding: 4rem 2rem 2rem;
     text-align: center;
     background: white;
-    max-width: 700px;
+    max-width: 1100px;
     margin: 2rem auto;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -93,8 +93,8 @@
   
   /* Projects */
   .projects {
-    max-width: 960px;
-    margin: 0 auto 3rem;
+    max-width: 1140px;
+    margin: 0 auto 10rem;
     padding: 0 1rem;
   }
   
@@ -261,6 +261,10 @@
   html {
     scroll-behavior: smooth;
   }
+  section {
+    scroll-margin-top: 100px; /* adjust for header height */
+  }
+  
   
   .contact-form button {
     padding: 0.75rem 1.5rem;

@@ -2,14 +2,14 @@ import React from "react";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A React app that does amazing things.",
-    link: "https://github.com/your/repo1",
+    title: "This Website source code!",
+    description: "A React/JavaScript app that does amazing things.",
+    link: "https://github.com/AndriiPrysiazhnyi/my-portfolio",
   },
   {
-    title: "Project Two",
-    description: "An innovative frontend project with cool features.",
-    link: "https://github.com/your/repo2",
+    title: "Work In Progress...",
+    description: "It would be great, I promise!",
+    link: "https://github.com/AndriiPrysiazhnyi/BaseKotlinProjectTraining",
   },
   // Add more projects here
 ];

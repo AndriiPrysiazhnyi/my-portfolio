@@ -14,7 +14,7 @@ export default function Footer() {
         <FaLinkedin />
       </a>
       <a
-        href="https://github.com/yourusername"
+        href="https://github.com/AndriiPrysiazhnyi"
         target="_blank"
         rel="noopener noreferrer"
         className="social-icon"

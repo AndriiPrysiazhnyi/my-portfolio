@@ -1,32 +1,71 @@
-// src/components/ContactPage.js
-
-import React from "react";
+// import React from "react";
 import "./ContactPage.css";
-import profilePic from "../assets/profile.jpg"; // Use your real image here
+
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+import profileHeadshot from "../assets/profileHeadshot.jpg";
+import HandshakeAnimation from './HandshakeAnimation';
 
 export default function ContactPage() {
-  return (
-    <div className="contact-wrapper">
-      <div className="contact-left">
-        <img src={profilePic} alt="Andrii Prysiazhnyi" />
-        <h1>Let’s work together</h1>
-        <p>I’m open to freelance, full-time, and consulting opportunities.</p>
-      </div>
+  const form = useRef();
 
-      <div className="contact-right">
-        <form
-          className="contact-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Message sent!");
-          }}
-        >
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" rows="6" required />
-          <button type="submit">Send Message</button>
-        </form>
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nvfs9ss",
+        "template_2afo1nf",
+        form.current,
+        "g6A_RJy2vJD5QmC4Z" 
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("❌ Failed to send message, please try again.");
+          console.log(error);
+        }
+      );
+  };
+
+  return (
+    <div className="contact-section">
+
+      <div className="contact-wrapper">
+        <div className="contact-left">
+          <HandshakeAnimation width={250} height={250} />
+          {/* <img src={profileHeadshot} alt="Andrii Prysiazhnyi" /> */}
+          <h1>Let’s work together</h1>
+          <p>I’m open to freelance, full-time, and consulting opportunities.</p>
+        </div>
+
+
+        <div className="contact-right">
+          
+          <form ref={form} onSubmit={sendEmail} className="contact-form">
+          <h2>Contact Me</h2>
+            <div className="form-group">
+              <label>Name</label>
+              <input type="text" name="name" required />
+            </div>
+
+            <div className="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required />
+            </div>
+
+            <div className="form-group">
+              <label>Message</label>
+              <textarea name="message" rows="5" required />
+            </div>
+
+            <button type="submit" className="send-button">Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
-  );
+  )
 }
